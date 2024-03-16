@@ -1,26 +1,29 @@
+local modpath = minetest.get_modpath("caverealms")
+local config = dofile(modpath .. "/config.lua")
+
 -- Basic params
-local YMIN = tonumber("-27000") -- caverealms.config.ymin -- Approximate realm limits.
-local YMAX = tonumber("-1500") -- caverealms.config.ymax
+local YMIN = config.ymin -- Approximate realm limits.
+local YMAX = config.ymax
 
-local STAGCHA = tonumber("0.003") -- caverealms.config.stagcha --0.002 --chance of stalagmites
-local STALCHA = tonumber("0.003") -- caverealms.config.stalcha --0.003 --chance of stalactites
-local CRYSTAL = tonumber("0.0002") -- caverealms.config.crystal --0.007 --chance of glow crystal formations
-local GEMCHA = tonumber("0.03") -- caverealms.config.gemcha --0.03 --chance of small glow gems
-local MUSHCHA = tonumber("0.04") -- caverealms.config.mushcha --0.04 --chance of mushrooms
-local MYCCHA = tonumber("0.03") -- caverealms.config.myccha --0.03 --chance of mycena mushrooms
-local WORMCHA = tonumber("0.015") -- caverealms.config.wormcha --0.03 --chance of glow worms
-local GIANTCHA = tonumber("0.001") -- caverealms.config.giantcha --0.001 -- chance of giant mushrooms
-local ICICHA = tonumber("0.035") -- caverealms.config.icicha --0.035 -- chance of icicles
-local FLACHA = tonumber("0.04") -- caverealms.config.flacha --0.04 --chance of constant flames
+local STAGCHA = config.stagcha --chance of stalagmites
+local STALCHA = config.stalcha --chance of stalactites
+local CRYSTAL = config.crystal --chance of glow crystal formations
+local GEMCHA = config.gemcha --chance of small glow gems
+local MUSHCHA = config.mushcha --chance of mushrooms
+local MYCCHA = config.myccha --chance of mycena mushrooms
+local WORMCHA = config.wormcha --chance of glow worms
+local GIANTCHA = config.giantcha -- chance of giant mushrooms
+local ICICHA = config.icicha -- chance of icicles
+local FLACHA = config.flacha --chance of constant flames
 
-local DM_TOP = tonumber("-14000") -- caverealms.config.dm_top -- -4000 --level at which Dungeon Master Realms start to appear
-local DM_BOT = tonumber("-16000") -- caverealms.config.dm_bot -- -5000 --level at which "" ends
-local DEEP_CAVE = tonumber("-7000") -- caverealms.config.deep_cave -- -7000 --level at which deep cave biomes take over
+local DM_TOP = config.dm_top --level at which Dungeon Master Realms start to appear
+local DM_BOT = config.dm_bot --level at which "" ends
+local DEEP_CAVE = config.deep_cave --level at which deep cave biomes take over
 
-local H_LAG = tonumber("8") -- caverealms.config.h_lag --15 --max height for stalagmites
-local H_LAC = tonumber("8") -- caverealms.config.h_lac --20 --...stalactites
-local H_CRY = tonumber("8") -- caverealms.config.h_cry --9 --max height of glow crystals
-local H_CLAC = tonumber("8") -- caverealms.config.h_clac --13 --max height of glow crystal stalactites
+local H_LAG = config.h_lag --max height for stalagmites
+local H_LAC = config.h_lac --...stalactites
+local H_CRY = config.h_cry --max height of glow crystals
+local H_CLAC = config.h_clac --max height of glow crystal stalactites
 
 -- 2D noise for biome
 local np_biome = {
